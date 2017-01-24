@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="3.00"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/ust_zalanie_kg"
+        android:key="ust_zalanie" />
+    <EditTextPreference
+        android:defaultValue="10.00"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/ust_label_anilox"
+        android:key="ust_anilox_vol" />
+    <SwitchPreference
+        android:defaultValue="true"
+        android:title="Odpad procentowo"
+        android:key="ust_odpad_procent"
+        android:summary="Kalkuluj odpad na podstawie nakładu" />
+    <EditTextPreference
+        android:defaultValue="0.005"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Procent odpadu"
+        android:key="ust_procent_odpad"
+        android:dependency="ust_odpad_procent" />
+</PreferenceScreen>

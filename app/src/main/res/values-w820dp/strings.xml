@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="jednostka_metr">m</string>
+    <string name="jednostka_procent">%</string>
+    <string name="jednostka_cm">cm</string>
+    <string name="jednostka_mm">mm</string>
+    <string name="button_paintRequire_text">Szacuj ilość farby</string>
+    <string name="odpad_label">Szacunkowy Odpad</string>
+    <string name="wynikNetto_label">Szacunkowe zużycie netto</string>
+    <string name="wynik_label">Szacunkowe zużycie</string>
+    <string name="menu_setting_label">Ustawienia</string>
+    <string name="menu_exit_label">Wyjście</string>
+    <string name="menu_info_label">Info</string>
+    <string name="procent_odpadu_preference_defaultValue">0.05</string>
+    <string name="ust_grup_label_odpad">Kalkulacja odpadu</string>
+    <string name="ust_zalanie_kg">Ilość farby na zalanie kałamarza</string>
+</resources>
