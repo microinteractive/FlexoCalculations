@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     EditText szerokosc_et;
     EditText pokrycie_et;
     EditText odpad_et;
-    TableRow odpad_tr;
+    public static TableRow odpad_tr;
     TextView wynik_tv;
     TextView wynikNetto_tv;
     TextView odpad_tv;
@@ -65,12 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
         if(ustawienia.getBoolean("ust_odpad_procent", true)){
            odpad_tr.setVisibility(View.GONE);
-           odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", ""));
+           odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", "0.5"));
         } else {
-
+            odpad_tr.setVisibility(View.VISIBLE);
+            //odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", "0.5"));
         }
-        anilox_vol = Double.valueOf(ustawienia.getString("ust_anilox_vol", ""));
-        zalanie = Double.valueOf(ustawienia.getString("ust_zalanie", ""));
+
+        anilox_vol = Double.valueOf(ustawienia.getString("ust_anilox_vol", "10"));
+        zalanie = Double.valueOf(ustawienia.getString("ust_zalanie", "3"));
 
     }
 

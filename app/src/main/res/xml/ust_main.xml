@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
         android:defaultValue="3.00"
@@ -19,7 +20,7 @@
         android:key="ust_odpad_procent"
         android:summary="Kalkuluj odpad na podstawie nakładu" />
     <EditTextPreference
-        android:defaultValue="0.005"
+        android:defaultValue="0.5"
         android:selectAllOnFocus="true"
         android:singleLine="true"
         android:title="Procent odpadu"
