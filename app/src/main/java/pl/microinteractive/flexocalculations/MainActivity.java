@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        //Toast.makeText(getBaseContext(), "Jednostka " + rb.getText() + "\nprzelicznik: " + przelicznik, Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Jednostka " + rb.getText() + "\nprzelicznik: " + przelicznik, Toast.LENGTH_LONG).show();
 
     }
     public void paintRequire_calc(View v) {
