@@ -3,9 +3,9 @@ package pl.microinteractive.flexocalculations;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        Toast.makeText(getBaseContext(), "Jednostka " + rb.getText() + "\nprzelicznik: " + przelicznik, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getBaseContext(), "Jednostka " + rb.getText() + "\nprzelicznik: " + przelicznik, Toast.LENGTH_LONG).show();
 
     }
     public void paintRequire_calc(View v) {
