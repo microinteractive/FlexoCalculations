@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -18,11 +19,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    public static TableRow odpad_tr;
     RadioGroup rg;
     RadioButton rb;
     Button bt;
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     EditText szerokosc_et;
     EditText pokrycie_et;
     EditText odpad_et;
-    public static TableRow odpad_tr;
     TextView wynik_tv;
     TextView wynikNetto_tv;
     TextView odpad_tv;
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
            odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", "0.5"));
         } else {
             odpad_tr.setVisibility(View.VISIBLE);
-            //odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", "0.5"));
+            odpad_procent = Double.valueOf(ustawienia.getString("ust_procent_odpad", "0.5"));
         }
 
         anilox_vol = Double.valueOf(ustawienia.getString("ust_anilox_vol", "10"));
@@ -113,9 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 przelicznik = 100;
                 break;
         }
-
-        Toast.makeText(getBaseContext(), "Jednostka " + rb.getText() + "\nprzelicznik: " + przelicznik, Toast.LENGTH_LONG).show();
-
+        Snackbar.make(v, rb.getText().toString(), Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
     public void paintRequire_calc(View v) {
 
@@ -123,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(naklad_et.getText().toString())) {
             naklad_et.setError("Podaj nakład");
+            Snackbar.make(v, "Brak parametru!", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
             return;
         } else {
             naklad_ok = true;
@@ -131,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
         if(!ustawienia.getBoolean("ust_odpad_procent", true)) {
             if (TextUtils.isEmpty(odpad_et.getText().toString())) {
                 odpad_et.setError("Podaj odpad");
+                Snackbar.make(v, "Brak parametru!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
                 return;
             } else {
                 odpad_ok = true;
@@ -141,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if(TextUtils.isEmpty(szerokosc_et.getText().toString())) {
             szerokosc_et.setError("Podaj szerokość");
+            Snackbar.make(v, "Brak parametru!", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
             return;
         } else {
             szerokosc_ok = true;
@@ -148,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if(TextUtils.isEmpty(pokrycie_et.getText().toString())){
             pokrycie_et.setError("Podaj pokrycie");
+            Snackbar.make(v, "Brak parametru!", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
             return;
         } else {
             pokrycie_ok = true;
@@ -178,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void exitApp() {
-        Toast.makeText(getBaseContext(), "Koniec", Toast.LENGTH_LONG).show();
         finish();
     }
 }
