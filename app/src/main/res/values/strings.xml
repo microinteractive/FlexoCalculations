@@ -31,6 +31,8 @@
     <string name="app_main_title"></string>
     <string name="app_main_subtitle"></string>
     <string name="title_activity_settings">Ustawienia</string>
+    <string name="dialog_text">Info na temat aplikacji</string>
+    <string name="dialog_title"></string>
 
     <!-- Strings related to Settings -->
 

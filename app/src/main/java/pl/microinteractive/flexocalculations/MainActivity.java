@@ -1,11 +1,13 @@
 package pl.microinteractive.flexocalculations;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -35,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     TextView wynikNetto_tv;
     TextView odpad_tv;
     SharedPreferences ustawienia;
-
 
     double przelicznik = 100.00;
     double zalanie, odpad_procent, anilox_vol;
@@ -76,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openDialog() {
+        final Dialog dialog = new Dialog(this); // Context, this, etc.
+        dialog.setContentView(R.layout.dialog);
+        dialog.setTitle(R.string.dialog_title);
+        dialog.show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mMenuInflater = getMenuInflater();
@@ -93,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         if(item.getItemId() == R.id.action_info) {
-
+            openDialog();
         }
         return super.onOptionsItemSelected(item);
     }
